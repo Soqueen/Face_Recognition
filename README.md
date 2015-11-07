@@ -3,6 +3,6 @@
 ##Install pip
 
 ```
-  sudo easy_install pip
+  easy_install pip
 ```
 
