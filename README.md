@@ -6,3 +6,12 @@
   easy_install pip
 ```
 
+## Run server
+
+```
+  cd venv/src
+```
+
+```
+  python manage.py runserver
+```
