@@ -1,6 +1,6 @@
 #YHack-2015-Face-Recognition
 
-#Install pip
+##Install pip
 
 ```
   sudo easy_install pip
