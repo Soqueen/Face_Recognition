@@ -1,24 +1,16 @@
 <!DOCTYPE html>
+
+{% load staticfiles %}
 <html>
 	<head>
 		<title> Home </title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">	
+	    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 	</head>
 
 	<style>
-		.navbar-inverse{
-			background-color: #337ab7;
-		}
-
-		.top-content{
-			padding-top: 60px;
-			padding-bottom: 30px;
-		}
-
-		.centered{
-			text-align: center;
-		}
 
 	</style>
 
@@ -54,8 +46,15 @@
 					<div class="well centered">
 						<h2> Search Image </h2>
 
-						<form>
-
+						<form>							
+							<div class="input-group">
+				                <span class="input-group-btn">
+				                    <span class="btn btn-primary btn-file">
+				                        Browse… <input type="file" multiple>
+				                    </span>
+				                </span>
+				                <input type="text" class="form-control" readonly>
+				            </div>					       
 						</form>
 					</div>
 				</div>
@@ -65,4 +64,5 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>    
 </html>
