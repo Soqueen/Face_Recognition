@@ -17,7 +17,7 @@ def save_file(file, path=""):
     fd.close()
 
 def home(request):
-    img_type = ["png", "jpg", "jpeg", "gif", "bmp"]
+    img_type = ["png", "jpg", "jpeg", "bmp"]
     template = "home.html"
     feedback = ""
     if request.method == "POST":
