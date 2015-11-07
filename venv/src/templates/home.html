@@ -10,10 +10,6 @@
         <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 	</head>
 
-	<style>
-
-	</style>
-
 	<body>
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
@@ -27,7 +23,7 @@
 					<a class="navbar-brand" href="#" style="color: white">Gallery</a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
-					<form class="navbar-form navbar-right" abineguid="F99CCBC65B4640108A49A4EF779E9B99">
+					<form method="POST" action="" class="navbar-form navbar-right">
 						<div class="form-group">
 							<input type="text" placeholder="Username" class="form-control" oldautocomplete="remove" autocomplete="off">
 						</div>
@@ -40,29 +36,40 @@
 			</div>
 		</nav>
 
-		<div class="container" style="margin-top: 200px;">
+		<div class="container" style="margin-top: 100px;">
 			<row>
 				<div class="col-md-offset-3 col-md-6">
 					<div class="well centered">
 						<h2> Search Image </h2>
-						<br>
-						<form class="form-horizontal" method="POST" action=""> {% csrf_token %}							
+						<br>						
+						<div>
+							{% if feedback == "success" %}
+								<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>Image Successfully Uploaded</div>
+							{% elif feedback = "invalid type" %}
+								<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>Error: Invalid type</div>							
+							{% endif %}
+						</div>
+						<form class="form-horizontal" method="POST" action="" enctype="multipart/form-data"> {% csrf_token %}							
 							<div class="input-group">
 				                <span class="input-group-btn">
 				                    <span class="btn btn-primary btn-file">
-				                        Browse… <input type="file" multiple>
+				                        Browse… <input type="file" name="image" multiple>
 				                    </span>
 				                </span>
 				                <input type="text" class="form-control" readonly>    	       			                
-				            </div>					      
-				            <br> <br>
+				            </div>				      
+				            <br> 
 				            <div>
 				                <input type="submit" value="Upload" class="btn btn-primary btn-lg"> </input>	
 				            <div>
 						</form>
 					</div>
-				</div>
+				</div>				
 			</row>
+
+			<div id="gallery">
+
+			</div>
 		</div>
 	</body>
 
