@@ -1,3 +1,4 @@
+import os
 from django.conf import settings
 from django.shortcuts import render
 from django.shortcuts import render_to_response
@@ -11,7 +12,7 @@ def save_file(file, path=""):
     """
 
     filename = file._get_name()
-    fd = open("{}/{}{}".format(settings.MEDIA_ROOT, str(path), str(filename)), 'wb')
+    fd = open("{}".format(os.path.join(settings.MEDIA_ROOT, str(path), str(filename))), 'wb')
     for chunk in file.chunks():
         fd.write(chunk)
     fd.close()
