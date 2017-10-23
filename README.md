@@ -1,18 +1,18 @@
-#YHack-2015-Face-Recognition
+# YHack-2015-Face-Recognition
 
-##Install pip
+## Install pip
 
 ```
   easy_install pip
 ```
 
-##Install virtualenv
+## Install virtualenv
 
 ```
   pip install virtualenv
 ```
 
-##Run virtualenv
+## Run virtualenv
 
 from \venv run
 
@@ -20,7 +20,7 @@ from \venv run
   Scripts\activate
 ```
 
-##Run server
+## Run server
 
 ```
   cd venv/src
